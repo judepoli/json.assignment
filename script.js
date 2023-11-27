@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 let jsonDataBase = [
 {
-	"title" : "Clara / New York",
+	"title" : "A flirt in New York",
 	"medium": "Film",
 	"pretty_lavender" : "#E7E7F2",
 	"year_span" : "In Progress",

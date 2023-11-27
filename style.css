@@ -14,7 +14,7 @@ body {
 	font-size: 100px;
 	margin: 30px;
 	border-style: double;
-	border-width: 20px;
+	border-width: 40px;
 	border-color: darkblue;
 }
 
@@ -26,9 +26,20 @@ body {
 	color: darkblue;
 	padding: 30px;
 	margin: 30px;
-	list-style-type: none;
 }
 
 h1{
 	font-style: italic;
+	margin: 10px;
+}
+
+h2{
+	padding: 0.002px;
+	margin: 10px;
+}
+
+ul{
+	list-style-type: none;
+	margin: 30px;
+
 }
