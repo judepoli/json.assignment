@@ -5,64 +5,45 @@ let contentJude = document.getElementById('contentJude');
 document.addEventListener("DOMContentLoaded", function() {
 
 
-let projectOne = {
-	"title" : "Judith Politi", //key value pair // 
-	"school" : "New York University, Tandon School of Engineering",
-	"graduation_year" : 2025,
-	"pretty_blue" : "#5BAFEB",
-	"interests" : ["art", "fart", "idunno", "not physics"]
-};
-
-console.log( projectOne['title']);
-console.log( projectOne['school']);
-console.log( projectOne['graduation_year']);
-console.log( projectOne['interests'][2]);
-
-
-createElementProper(projectOne);
-
-
-
-
-
 let jsonDataBase = [
 {
-	"title" : "Clara",
-	"medium": "film",
-	"year_span" : "in_progress",
-	"technical_skills" : ["digital camera", "photoshop", "reaper" ]
+	"title" : "Clara / New York",
+	"medium": "Film",
+	"pretty_lavender" : "#E7E7F2",
+	"year_span" : "In Progress",
+	"technical_skills" : ["digital camera", "Photoshop", "Reaper", "PremierePro" ]
 },
 
 {
 	"title" : "Paganii",
-	"medium": "clay",
+	"medium": "Clay",
 	"year_span" : "2023",
-	"technical_skills" : ["clay modeling", "prototyping", "illustrator" ]
+	"technical_skills" : ["clay model", "prototyping", "Illustrator" ]
 },
 {
-	"title" : "columns",
-	"medium": "web",
+	"title" : "Columns",
+	"medium": "Website",
 	"year_span" : "2023",
 	"technical_skills" : ["html", "javascript", "css" ]
 },
 
 {
-	"title" : "Casa Italiana flyers ",
-	"medium": "web / print",
+	"title" : "NYU Casa Italiana Zerilli Marimo",
+	"medium": "Web / Print",
 	"year_span" : "2023",
-	"technical_skills" : ["illustrator", "photoshop" ]
+	"technical_skills" : ["Illustrator", "Photoshop" ]
 },
 {
-	"title" : "MiddleSex Playing cards: Promoting mental health",
-	"medium": "playing cards",
+	"title" : "MiddleSex Playing Cards: Promoting Mental Health",
+	"medium": "Playing Cards",
 	"year_span" : "2022-23",
-	"technical_skills" : ["illustrator", "photoshop" ]
+	"technical_skills" : ["Illustrator", "Photoshop" ]
 },
 {
 	"title" : "Unite the Union Coventry Banner",
-	"medium": "large format banner",
+	"medium": "Large Format Banner",
 	"year_span" : "2022-23",
-	"technical_skills" : ["illustrator", "photoshop" ]
+	"technical_skills" : ["Illustrator", "Photoshop" ]
 }
 
 ];
@@ -73,26 +54,35 @@ for (var i = 0; i < jsonDataBase.length; i++){
 
 
 function createElementProper(incomingJSON){
-	let newDiv = document.createElement("DIV"); // big div //
-	newDiv.style.backgroundColor = incomingJSON['pretty_blue'];
-	newDiv.classList.add('pageHeader');
+	let newContent = document.createElement("DIV"); // big div //
+	newContent.style.backgroundColor = incomingJSON['pretty_blue'];
+	newContent.classList.add('newContent');
 
-	let headerMain = document.createElement("header");
-	headerMain.classList.add('contentTitle');
-	headerMain.innerText = projectOne['title'];
-	newDiv.appendChild(headerMain);
+	let newContentHeading = document.createElement("H1");
+	newContentHeading.classList.add('newContentHeading');
+	newContentHeading.innerText = incomingJSON['title'];
+	newContent.appendChild(newContentHeading);
 
-	let subHeader = document.createElement("universityName");
-	subHeader.classList.add('contentSchool');
-	subHeader.innerText = projectOne['school'];
-	newDiv.appendChild(subHeader);
+	let newContentMedium = document.createElement("H2");
+	newContentMedium.classList.add('newContentMedium');
+	newContentMedium.innerText = incomingJSON['medium'];
+	newContent.appendChild(newContentMedium);
 
-	let subSubHeader = document.createElement('judeInterests');
-	subSubHeader.classList.add('contentInterests');
-	subSubHeader.innerText = projectOne['interests'];
-	newDiv.appendChild(subSubHeader);
+	let newContentDate = document.createElement('H2');
+	newContentDate.classList.add('newContentDate');
+	newContentDate.innerText = incomingJSON['year_span'];
+	newContent.appendChild(newContentDate);
+ 
+ 	let newContentSkills = document.createElement("UL");
+ 	newContent.appendChild(newContentSkills);
+ 	for (var i = 0; i < incomingJSON['technical_skills'].length; i++) {
+	    var currentTechnicalSkill = incomingJSON['technical_skills'][i];
+	    var newSkillItem = document.createElement("LI");
+	    newSkillItem.innerText = currentTechnicalSkill;
+	    newContentSkills.appendChild(newSkillItem);
+  	}
 
-	contentJude.appendChild(newDiv);
+	contentJude.appendChild(newContent);
 
 }
 
