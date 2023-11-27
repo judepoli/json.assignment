@@ -82,6 +82,11 @@ function createElementProper(incomingJSON){
 	    newContentSkills.appendChild(newSkillItem);
   	}
 
+  	let newImage = document.createElement("Img");
+  	newImage.classList.add("headerImage");
+  	newImage.src = incomingJSON['download.jpeg'];
+  	newContent.appendChild()
+
 	contentJude.appendChild(newContent);
 
 }
