@@ -1,6 +1,8 @@
 let pageHeader = document.getElementById('pageHeader');
 let whatDoIDo = document.getElementById('whatDoIDo');
 let contentJude = document.getElementById('contentJude');
+var rellax = new Rellax('.rellax');
+
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -82,13 +84,7 @@ function createElementProper(incomingJSON){
 	    newContentSkills.appendChild(newSkillItem);
   	}
 
-  	let newImage = document.createElement("Img");
-  	newImage.classList.add("headerImage");
-  	newImage.src = incomingJSON['download.jpeg'];
-  	newContent.appendChild()
-
-	contentJude.appendChild(newContent);
-
+  	contentJude.appendChild(newContent);
 }
 
 });
